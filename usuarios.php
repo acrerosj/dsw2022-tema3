@@ -63,6 +63,7 @@
 <?php
    $query = 'SELECT * From usuarios';
    $users = $conn->query($query);
+   
    while ($user = $users->fetch_assoc()) {
     $date = date_create_from_format('Y-m-d', $user['fecha']);
     $active = $user['activo'] == 1 ? "Si" : "No";
@@ -70,7 +71,7 @@
   <tr>
     <td><?=$user['id']?></td>
     <td><?=$user['nombre']?></td>
-    <td><?=strftime('%A, %d de %B de %Y', date_timestamp_get($date)); ?></td>
+    <td><?=strftime('%A, %e de %B de %Y', date_timestamp_get($date)); ?></td>
     <td><?=$active?></td>
   </tr>
 <?php
