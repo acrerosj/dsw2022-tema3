@@ -1,5 +1,4 @@
 <?php
- setlocale(LC_ALL, "es_ES.UTF-8");
  $conn = mysqli_connect('db', 'root', 'test', "world");
 
  function optionCountries($conn) {
@@ -21,7 +20,7 @@
 </head>
 <body>
   <h1>Migración</h1>
-  <form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+  <form action="migration.php" method="post">
     <p>
       <label for="origin">Origen: </label>
       <select name="origin" id="origin">

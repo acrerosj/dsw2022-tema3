@@ -36,7 +36,7 @@
     </thead>
     <tbody>
 <?php
-  $sql = "SELECT * FROM languagesta";
+  $sql = "SELECT * FROM languagestat";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   while($row) {

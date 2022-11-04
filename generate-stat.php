@@ -1,17 +1,17 @@
-ALGO
+<h1>Realizando las estadísticas</h1>
 <?php
-  setlocale(LC_ALL, "es_ES.UTF-8");
   $conn = mysqli_connect('db', 'root', 'test', "world");
 
-  $stmt = $conn->prepare("INSERT INTO languagesta (language, date) VALUES (?,?)");
+  $stmt = $conn->prepare("INSERT INTO languagestat (language, date) VALUES (?,?)");
   $stmt->bind_param("ss", $language, $date);
 
-  $sql = "SELECT DISTINCT(language) AS language FROM countrylanguage";
+  $sql = "SELECT DISTINCT(language) FROM countrylanguage";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   while($row) {
     $language = $row['language'];
-    $date = date("Y-m_d");
+    echo "<p>$language</p>";
+    $date = date("Y-m-d");
     $stmt->execute();
     $row = $result->fetch_assoc();
   }
@@ -21,4 +21,4 @@ ALGO
   $conn->close();
 
 ?>
-FIN
+<h2>Generadas las estadísticas</h2>
