@@ -33,12 +33,12 @@
   $conn->autocommit(FALSE);
 
   // Borramos todos los datos de la tabla:
-  $sql = "DELETE FROM languagestat";
+  $sql = "DELETE FROM languagest";
   if ($conn->query($sql)) {
     echo "<h2>Datos eliminados</h2>";
   } else {
     $conn->rollback();
-    die("Error al eliminar los datos: " . $conn->error);
+    die("Error al eliminar los datos: ");
   }
 
   // Buscamos todos los idiomas distintos que existen.
