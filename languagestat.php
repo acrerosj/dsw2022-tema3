@@ -36,7 +36,7 @@
     </thead>
     <tbody>
 <?php
-  $sql = "SELECT * FROM languagestat";
+  $sql = "SELECT * FROM languagestat ORDER BY persons DESC";
   $result = $conn->query($sql);
   $row = $result->fetch_assoc();
   while($row) {
