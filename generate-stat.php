@@ -33,7 +33,7 @@
   $conn->autocommit(FALSE);
 
   // Borramos todos los datos de la tabla:
-  $sql = "DELETE FROM languagest";
+  $sql = "DELETE FROM languagestat";
   if ($conn->query($sql)) {
     echo "<h2>Datos eliminados</h2>";
   } else {
@@ -51,6 +51,7 @@
     $date = date("Y-m-d");
     // Ejecutamos la consulta preparada para conocer los países y hablantes.
     $stmtData->execute();
+    // Actualiza las variables $countries y $persons.
     // Debemos almacenar los resultados porque tenemos dos sentencias preparadas.
     $stmtData->store_result();
     $stmtData->fetch();  // Esta consulta siempre genera una y solo una fila.
